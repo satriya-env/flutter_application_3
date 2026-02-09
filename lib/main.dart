@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_application_3/TugasModul3.dart';
 // import 'package:flutter_application_3/layout.dart';
 // import 'package:flutter_application_3/TugasModul4.dart';
 //import 'package:flutter_application_3/layout_GridView.dart';
@@ -19,13 +20,21 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_application_3/Latihan5.dart';
 // import 'package:flutter_application_3/Latihan6.dart';
 // import 'package:flutter_application_3/Favorit_Widget.dart';
-import 'package:flutter_application_3/TugasModul6.dart';
+// import 'package:flutter_application_3/TugasModul6.dart';
+import 'homepage.dart';
+import 'package:flutter_application_3/providers/counter_providers.dart';
+import 'package:provider/provider.dart';
 
 
 
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => CounterProviders(),
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -36,7 +45,7 @@ class MainApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Profile",
-      home: WidgetInteraktif(),
+      home: Homepage(),
     );
   }
 }
